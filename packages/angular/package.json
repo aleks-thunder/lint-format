@@ -1,0 +1,39 @@
+{
+  "name": "@lavinmedia/angular",
+  "version": "0.0.0",
+  "description": "Shared Angular lint and format configuration",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lavinmedia/lint-and-formating.git"
+  },
+  "main": "eslint.js",
+  "exports": {
+    ".": "./eslint.js",
+    "./eslint": "./eslint.js",
+    "./prettier": "./prettier.js"
+  },
+  "files": [
+    "eslint.js",
+    "prettier.js"
+  ],
+  "dependencies": {
+    "@lavinmedia/base": "0.0.0",
+    "@eslint/js": "9.39.4",
+    "angular-eslint": "21.3.1",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-prettier": "5.5.5",
+    "eslint-plugin-simple-import-sort": "12.1.1",
+    "eslint-plugin-unused-imports": "4.4.1",
+    "typescript-eslint": "8.57.2"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "restricted"
+  },
+  "release": {
+    "extends": "../../.releaserc.json",
+    "tagFormat": "angular-v${version}"
+  }
+}
