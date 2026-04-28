@@ -22,7 +22,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  GITHUB_TOKEN: ${{ secrets.NPM_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
 
 jobs:
   release-packages:

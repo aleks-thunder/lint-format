@@ -1,21 +1,13 @@
+import { defineConfig } from "eslint/config";
 import baseConfig from "@aleks-thunder/base/eslint";
 import angular from "angular-eslint";
+import eslintConfigPrettier from "eslint-config-prettier";
 import prettierPlugin from "eslint-plugin-prettier";
 
-function scopeAngularTemplateConfigs(configs) {
-  return configs.map((c) => {
-    if (!c || typeof c !== "object") return c;
-    if (c.files) return c;
-    return { ...c, files: ["**/*.html"] };
-  });
-}
-
-export default [
-  ...(Array.isArray(baseConfig) ? baseConfig : [baseConfig]),
-  ...angular.configs.tsRecommended,
-  ...scopeAngularTemplateConfigs(angular.configs.templateRecommended),
+export default defineConfig(
   {
     files: ["**/*.ts"],
+    extends: [...baseConfig, ...angular.configs.tsRecommended],
     processor: angular.processInlineTemplates,
     rules: {
       "@angular-eslint/directive-selector": [
@@ -41,6 +33,7 @@ export default [
     plugins: {
       prettier: prettierPlugin,
     },
+    extends: [...angular.configs.templateRecommended, eslintConfigPrettier],
     rules: {
       "prettier/prettier": ["error", { parser: "angular" }],
       "@angular-eslint/template/attributes-order": [
@@ -59,4 +52,4 @@ export default [
       ],
     },
   },
-];
+);

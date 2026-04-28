@@ -37,7 +37,5 @@ jobs:
       - name: semantic-release dry run
         working-directory: ${{ matrix.package_dir }}
         env:
-          GITHUB_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: node ../../node_modules/semantic-release/bin/semantic-release.js --dry-run
+          GITHUB_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
+        run: npx semantic-release --dry-run

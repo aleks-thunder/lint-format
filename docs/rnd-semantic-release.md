@@ -36,7 +36,7 @@ BREAKING CHANGE: consumers must update imports from old entry points.
   - `npm run release:dry`
 - You must provide tokens locally (CI injects these automatically):
   - `GITHUB_TOKEN` (or `GH_TOKEN`) for GitHub API access
-  - `NPM_TOKEN` / `NODE_AUTH_TOKEN` for registry auth (GitHub Packages)
+  - `PUBLISH_TOKEN` / `NODE_AUTH_TOKEN` for registry auth (GitHub Packages)
 
 ## What config enables it
 

@@ -8,20 +8,21 @@
     "type": "git",
     "url": "https://github.com/aleks-thunder/lint-and-formating.git"
   },
-  "main": "eslint.js",
+  "main": "eslint.config.js",
   "exports": {
-    ".": "./eslint.js",
-    "./eslint": "./eslint.js",
-    "./prettier": "./prettier.js"
+    ".": "./eslint.config.js",
+    "./eslint": "./eslint.config.js",
+    "./prettier": "./prettier.config.js"
   },
   "files": [
-    "eslint.js",
-    "prettier.js"
+    "eslint.config.js",
+    "prettier.config.js"
   ],
   "dependencies": {
     "@aleks-thunder/base": "*",
     "@eslint/js": "9.39.4",
     "angular-eslint": "21.3.1",
+    "eslint": "9.39.4",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.5",
     "eslint-plugin-simple-import-sort": "12.1.1",
@@ -37,3 +38,4 @@
     "tagFormat": "angular-v${version}"
   }
 }
+

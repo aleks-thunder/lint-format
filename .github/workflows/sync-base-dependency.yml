@@ -1,0 +1,67 @@
+name: Sync base dependency versions
+
+on:
+  workflow_run:
+    workflows:
+      - "Release packages"
+    types:
+      - completed
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  GITHUB_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
+
+jobs:
+  sync:
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+          token: ${{ secrets.PUBLISH_TOKEN }}
+
+      - name: Sync @aleks-thunder/base version in dependent packages
+        id: sync
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+
+          const root = process.cwd();
+          const basePkgPath = path.join(root, 'packages/base/package.json');
+          const angularPkgPath = path.join(root, 'packages/angular/package.json');
+          const reactPkgPath = path.join(root, 'packages/react/package.json');
+
+          const basePkg = JSON.parse(fs.readFileSync(basePkgPath, 'utf8'));
+          const baseVersion = basePkg.version;
+          let changed = false;
+
+          for (const pkgPath of [angularPkgPath, reactPkgPath]) {
+            const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
+            if (!pkg.dependencies || !pkg.dependencies['@aleks-thunder/base']) continue;
+            if (pkg.dependencies['@aleks-thunder/base'] === baseVersion) continue;
+            pkg.dependencies['@aleks-thunder/base'] = baseVersion;
+            fs.writeFileSync(pkgPath, `${JSON.stringify(pkg, null, 2)}\n`);
+            changed = true;
+          }
+
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `changed=${changed}\n`);
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `base_version=${baseVersion}\n`);
+          NODE
+
+      - name: Commit and push dependency sync
+        if: steps.sync.outputs.changed == 'true'
+        shell: bash
+        run: |
+          git add packages/angular/package.json packages/react/package.json
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "fix(deps): sync @aleks-thunder/base to ${{ steps.sync.outputs.base_version }}"
+          git push origin main
