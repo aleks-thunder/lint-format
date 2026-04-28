@@ -7,6 +7,7 @@ export default {
       files: "*.html",
       options: {
         parser: "angular",
+        "singleAttributePerLine": true
       },
     },
   ],
