@@ -1,5 +1,5 @@
 import { defineConfig } from "eslint/config";
-import baseConfig from "@aleks-thunder/base/eslint";
+import baseConfig from "@aleks-thunder/lint-format-base/eslint";
 import angular from "angular-eslint";
 import eslintConfigPrettier from "eslint-config-prettier";
 import prettierPlugin from "eslint-plugin-prettier";
@@ -53,3 +53,4 @@ export default defineConfig(
     },
   },
 );
+

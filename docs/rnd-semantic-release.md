@@ -125,7 +125,7 @@ Use Conventional Commits:
 
 ## Rollout checklist for consumer repos
 
-- Add dependency on `@aleks-thunder/base` / `@aleks-thunder/angular` / `@aleks-thunder/react`.
+- Add dependency on `@aleks-thunder/lint-format-base` / `@aleks-thunder/lint-format-angular` / `@aleks-thunder/lint-format-react`.
 - Extend ESLint/Prettier from the selected preset package.
 - Remove duplicated local lint/format rules.
 - Run lint/format locally and validate CI.
@@ -135,3 +135,4 @@ Use Conventional Commits:
 - **No release created**: commit is not releasable (`feat`/`fix`/`feat()!`).
 - **Wrong package released**: check `Detect changed packages (native git)` step outputs (`base/angular/react=true|false`) in workflow logs.
 - **Auth/publish errors**: confirm token permissions and scope mapping in `.npmrc`.
+

@@ -3,8 +3,8 @@
 Install package:
 
 ```bash
-npm i -D @aleks-thunder/base
-# or: @aleks-thunder/angular | @aleks-thunder/react
+npm i -D @aleks-thunder/lint-format-base
+# or: @aleks-thunder/lint-format-angular | @aleks-thunder/lint-format-react
 ```
 
 Add at the project root:
@@ -15,8 +15,8 @@ Add at the project root:
 **`eslint.config.js`**
 
 ```js
-import baseEslint from "@aleks-thunder/base/eslint";
-// import angularEslint from "@aleks-thunder/angular/eslint";
+import baseEslint from "@aleks-thunder/lint-format-base/eslint";
+// import angularEslint from "@aleks-thunder/lint-format-angular/eslint";
 
 export default baseEslint;
 ```
@@ -24,8 +24,9 @@ export default baseEslint;
 **`prettier.config.js`**
 
 ```js
-import basePrettier from "@aleks-thunder/base/prettier";
-// import angularPrettier from "@aleks-thunder/angular/prettier";
+import basePrettier from "@aleks-thunder/lint-format-base/prettier";
+// import angularPrettier from "@aleks-thunder/lint-format-angular/prettier";
 
 export default basePrettier;
 ```
+

@@ -28,7 +28,7 @@ jobs:
           ref: main
           token: ${{ secrets.PUBLISH_TOKEN }}
 
-      - name: Sync @aleks-thunder/base version in dependent packages
+      - name: Sync @aleks-thunder/lint-format-base version in dependent packages
         id: sync
         shell: bash
         run: |
@@ -47,9 +47,9 @@ jobs:
 
           for (const pkgPath of [angularPkgPath, reactPkgPath]) {
             const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
-            if (!pkg.dependencies || !pkg.dependencies['@aleks-thunder/base']) continue;
-            if (pkg.dependencies['@aleks-thunder/base'] === baseVersion) continue;
-            pkg.dependencies['@aleks-thunder/base'] = baseVersion;
+            if (!pkg.dependencies || !pkg.dependencies['@aleks-thunder/lint-format-base']) continue;
+            if (pkg.dependencies['@aleks-thunder/lint-format-base'] === baseVersion) continue;
+            pkg.dependencies['@aleks-thunder/lint-format-base'] = baseVersion;
             fs.writeFileSync(pkgPath, `${JSON.stringify(pkg, null, 2)}\n`);
             changed = true;
           }
@@ -63,5 +63,6 @@ jobs:
         shell: bash
         run: |
           git add packages/angular/package.json packages/react/package.json
-          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "fix(deps): sync @aleks-thunder/base to ${{ steps.sync.outputs.base_version }}"
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "fix(deps): sync @aleks-thunder/lint-format-base to ${{ steps.sync.outputs.base_version }}"
           git push origin main
+

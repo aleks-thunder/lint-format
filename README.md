@@ -13,6 +13,7 @@ See `[docs/semantic-release-rnd.md](docs/semantic-release-rnd.md)` for a concise
 
 ## Packages
 
-- `@aleks-thunder/base`
-- `@aleks-thunder/angular`
-- `@aleks-thunder/react`
+- `@aleks-thunder/lint-format-base`
+- `@aleks-thunder/lint-format-angular`
+- `@aleks-thunder/lint-format-react`
+

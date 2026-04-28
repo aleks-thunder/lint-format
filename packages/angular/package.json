@@ -1,12 +1,12 @@
 {
-  "name": "@aleks-thunder/angular",
+  "name": "@aleks-thunder/lint-format-angular",
   "version": "0.0.0",
   "description": "Shared Angular lint and format configuration",
   "type": "module",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aleks-thunder/lint-and-formating.git"
+    "url": "https://github.com/aleks-thunder/lint-format.git"
   },
   "main": "eslint.config.js",
   "exports": {
@@ -19,15 +19,11 @@
     "prettier.config.js"
   ],
   "dependencies": {
-    "@aleks-thunder/base": "*",
-    "@eslint/js": "9.39.4",
+    "@aleks-thunder/lint-format-base": "*",
     "angular-eslint": "21.3.1",
     "eslint": "9.39.4",
     "eslint-config-prettier": "10.1.8",
-    "eslint-plugin-prettier": "5.5.5",
-    "eslint-plugin-simple-import-sort": "12.1.1",
-    "eslint-plugin-unused-imports": "4.4.1",
-    "typescript-eslint": "8.57.2"
+    "eslint-plugin-prettier": "5.5.5"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
@@ -38,4 +34,5 @@
     "tagFormat": "angular-v${version}"
   }
 }
+
 

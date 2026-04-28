@@ -1,12 +1,12 @@
 {
-  "name": "@aleks-thunder/base",
+  "name": "@aleks-thunder/lint-format-base",
   "version": "0.0.0",
   "description": "Shared base ESLint and Prettier configuration",
   "type": "module",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aleks-thunder/lint-and-formating.git"
+    "url": "https://github.com/aleks-thunder/lint-format.git"
   },
   "main": "eslint.config.js",
   "exports": {
@@ -38,4 +38,5 @@
     "tagFormat": "base-v${version}"
   }
 }
+
 

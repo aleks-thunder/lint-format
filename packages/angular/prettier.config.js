@@ -1,4 +1,4 @@
-import basePrettier from "@aleks-thunder/base/prettier";
+import basePrettier from "@aleks-thunder/lint-format-base/prettier";
 
 export default {
   ...basePrettier,
@@ -11,3 +11,4 @@ export default {
     },
   ],
 };
+

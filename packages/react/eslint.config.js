@@ -1,5 +1,5 @@
 import { defineConfig } from "eslint/config";
-import baseConfig from "@aleks-thunder/base/eslint";
+import baseConfig from "@aleks-thunder/lint-format-base/eslint";
 import reactPlugin from "eslint-plugin-react";
 import hooksPlugin from "eslint-plugin-react-hooks";
 
@@ -36,3 +36,4 @@ export default defineConfig(...baseConfig, {
     "react-hooks/exhaustive-deps": "warn",
   },
 });
+
