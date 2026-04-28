@@ -3,8 +3,8 @@
 Install package:
 
 ```bash
-npm i -D @lavinmedia/base
-# or: @lavinmedia/angular | @lavinmedia/react
+npm i -D @aleks-thunder/base
+# or: @aleks-thunder/angular | @aleks-thunder/react
 ```
 
 Add at the project root:
@@ -15,8 +15,8 @@ Add at the project root:
 **`eslint.config.js`**
 
 ```js
-import baseEslint from "@lavinmedia/base/eslint";
-// import angularEslint from "@lavinmedia/angular/eslint";
+import baseEslint from "@aleks-thunder/base/eslint";
+// import angularEslint from "@aleks-thunder/angular/eslint";
 
 export default baseEslint;
 ```
@@ -24,8 +24,8 @@ export default baseEslint;
 **`prettier.config.js`**
 
 ```js
-import basePrettier from "@lavinmedia/base/prettier";
-// import angularPrettier from "@lavinmedia/angular/prettier";
+import basePrettier from "@aleks-thunder/base/prettier";
+// import angularPrettier from "@aleks-thunder/angular/prettier";
 
 export default basePrettier;
 ```

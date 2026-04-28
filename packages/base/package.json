@@ -1,12 +1,12 @@
 {
-  "name": "@lavinmedia/base",
+  "name": "@aleks-thunder/base",
   "version": "0.0.0",
   "description": "Shared base ESLint and Prettier configuration",
   "type": "module",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lavinmedia/lint-and-formating.git"
+    "url": "https://github.com/aleks-thunder/lint-and-formating.git"
   },
   "main": "eslint.js",
   "exports": {

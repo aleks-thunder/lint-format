@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: 20
           registry-url: https://npm.pkg.github.com
-          scope: "@lavinmedia"
+          scope: "@aleks-thunder"
           cache: npm
 
       - name: Install dependencies
@@ -37,7 +37,7 @@ jobs:
       - name: semantic-release dry run
         working-directory: ${{ matrix.package_dir }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: node ../../node_modules/semantic-release/bin/semantic-release.js --dry-run

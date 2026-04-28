@@ -1,12 +1,12 @@
 {
-  "name": "@lavinmedia/angular",
+  "name": "@aleks-thunder/angular",
   "version": "0.0.0",
   "description": "Shared Angular lint and format configuration",
   "type": "module",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lavinmedia/lint-and-formating.git"
+    "url": "https://github.com/aleks-thunder/lint-and-formating.git"
   },
   "main": "eslint.js",
   "exports": {
@@ -19,7 +19,7 @@
     "prettier.js"
   ],
   "dependencies": {
-    "@lavinmedia/base": "0.0.0",
+    "@aleks-thunder/base": "*",
     "@eslint/js": "9.39.4",
     "angular-eslint": "21.3.1",
     "eslint-config-prettier": "10.1.8",

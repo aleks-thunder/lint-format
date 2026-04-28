@@ -1,4 +1,4 @@
-import baseConfig from "@lavinmedia/base/eslint";
+import baseConfig from "@aleks-thunder/base/eslint";
 import reactPlugin from "eslint-plugin-react";
 import hooksPlugin from "eslint-plugin-react-hooks";
 

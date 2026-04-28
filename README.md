@@ -13,6 +13,6 @@ See `[docs/semantic-release-rnd.md](docs/semantic-release-rnd.md)` for a concise
 
 ## Packages
 
-- `@lavinmedia/base`
-- `@lavinmedia/angular`
-- `@lavinmedia/react`
+- `@aleks-thunder/base`
+- `@aleks-thunder/angular`
+- `@aleks-thunder/react`

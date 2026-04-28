@@ -10,13 +10,13 @@
    - `cd packages/base && yalc publish`
    - `cd ../angular && yalc publish` (or `../react`)
 3. In consumer repo, add local packages:
-   - `yalc add @lavinmedia/base @lavinmedia/angular`
+   - `yalc add @aleks-thunder/base @aleks-thunder/angular`
    - then `npm install`
 4. After each preset change, sync again:
    - from changed preset package folder (`packages/base`, `packages/angular`, or `packages/react`):
      - `yalc push`
    - in consumer repo:
-     - `yalc update @lavinmedia/base @lavinmedia/angular`
+     - `yalc update @aleks-thunder/base @aleks-thunder/angular`
      - `npm install`
 5. If lint output in editor does not refresh:
    - open Command Palette and run `ESLint: Restart ESLint Server`
@@ -27,4 +27,4 @@
 
 - Works across machines and teams; no hardcoded relative paths.
 - Close to real package-consumer behavior.
-- Keep CI/release flows on registry versions (`@lavinmedia/*@x.y.z`), not local `yalc` artifacts.
+- Keep CI/release flows on registry versions (`@aleks-thunder/*@x.y.z`), not local `yalc` artifacts.

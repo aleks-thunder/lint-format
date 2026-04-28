@@ -1,4 +1,4 @@
-import baseConfig from "@lavinmedia/base/eslint";
+import baseConfig from "@aleks-thunder/base/eslint";
 import angular from "angular-eslint";
 import prettierPlugin from "eslint-plugin-prettier";
 

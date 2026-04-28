@@ -28,7 +28,7 @@ Before publishing real shared presets, we need to validate the end-to-end releas
 
 ### 2) preset module entrypoints vs consumer config file names
 
-- preset module entrypoints (`@lavinmedia/*/eslint`, `@lavinmedia/*/prettier`)
+- preset module entrypoints (`@aleks-thunder/*/eslint`, `@aleks-thunder/*/prettier`)
   - Benefit: the package exposes a stable import target, and it aligns well with `package.json` `exports`.
   - Benefit: consumers can reliably extend the preset by referencing your exported module.
 - `.eslintrc.`\* inside the published package
@@ -42,33 +42,33 @@ Before publishing real shared presets, we need to validate the end-to-end releas
   - Work locally in a monorepo for fast iteration.
   - Do **not** translate well after publishing because `file:../base` points to a path that doesn’t exist in the consumer environment.
 - Real dependency ranges
-  - Ensure that when `@lavinmedia/angular` (or `@lavinmedia/react`) is installed, `@lavinmedia/base` is also installed from the registry.
+  - Ensure that when `@aleks-thunder/angular` (or `@aleks-thunder/react`) is installed, `@aleks-thunder/base` is also installed from the registry.
 
-**Decision for this project:** `@lavinmedia/angular` and `@lavinmedia/react` depend on `@lavinmedia/base` using a portable range.
+**Decision for this project:** `@aleks-thunder/angular` and `@aleks-thunder/react` depend on `@aleks-thunder/base` using a portable range.
 
 ## Final chosen strategy (applies to this repository)
 
 ### Preset packages and exports
 
-- `@lavinmedia/base`
+- `@aleks-thunder/base`
   - Exposes preset module entrypoints via `packages/base/package.json` `exports`.
-- `@lavinmedia/angular` and `@lavinmedia/react`
-  - Expose their own preset module entrypoints (and extend `@lavinmedia/base` presets).
+- `@aleks-thunder/angular` and `@aleks-thunder/react`
+  - Expose their own preset module entrypoints (and extend `@aleks-thunder/base` presets).
 
 ### Dependency model
 
-- `@lavinmedia/base`:
+- `@aleks-thunder/base`:
   - uses `dependencies` for `eslint` and `prettier`.
-- `@lavinmedia/angular` and `@lavinmedia/react`:
-  - depend on `@lavinmedia/base` with a portable semver range (demo: `"*"`).
+- `@aleks-thunder/angular` and `@aleks-thunder/react`:
+  - depend on `@aleks-thunder/base` with a portable semver range (demo: `"*"`).
   - do not require the consumer to separately install `eslint/prettier`.
 
 ## Expected consumer usage after implementation
 
 - Install only the preset package:
-  - `npm i -D @lavinmedia/angular`
+  - `npm i -D @aleks-thunder/angular`
   - (or `.../react` / `.../base`)
 - ESLint config:
-  - `eslint.config.js`: `import` from `@lavinmedia/angular/eslint` (see [consumer.md](./consumer.md)).
+  - `eslint.config.js`: `import` from `@aleks-thunder/angular/eslint` (see [consumer.md](./consumer.md)).
 - Prettier config:
-  - `prettier.config.js`: `import` from `@lavinmedia/angular/prettier` (see [consumer.md](./consumer.md)).
+  - `prettier.config.js`: `import` from `@aleks-thunder/angular/prettier` (see [consumer.md](./consumer.md)).

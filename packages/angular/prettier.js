@@ -1,4 +1,4 @@
-import basePrettier from "@lavinmedia/base/prettier";
+import basePrettier from "@aleks-thunder/base/prettier";
 
 export default {
   ...basePrettier,
