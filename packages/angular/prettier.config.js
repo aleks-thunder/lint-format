@@ -1,4 +1,4 @@
-import basePrettier from "@aleks-thunder/lint-format-base/prettier";
+import basePrettier from "@lavinmedia/lint-format-base/prettier";
 
 export default {
   ...basePrettier,

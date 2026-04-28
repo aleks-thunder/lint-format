@@ -13,7 +13,6 @@ See `[docs/semantic-release-rnd.md](docs/semantic-release-rnd.md)` for a concise
 
 ## Packages
 
-- `@aleks-thunder/lint-format-base`
-- `@aleks-thunder/lint-format-angular`
-- `@aleks-thunder/lint-format-react`
-
+- `@lavinmedia/lint-format-base`
+- `@lavinmedia/lint-format-angular`
+- `@lavinmedia/lint-format-react`

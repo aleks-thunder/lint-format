@@ -1,4 +1,4 @@
-import basePrettier from "@aleks-thunder/lint-format-base/prettier";
+import basePrettier from "@lavinmedia/lint-format-base/prettier";
 
 /** React preset: Tailwind class sorting + Prettier options that differ from base. */
 export default {
