@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/aleks-thunder/lint-format/compare/react-v1.0.0...react-v1.0.1) (2026-04-29)
+
+
+### Bug Fixes
+
+* **deps:** sync @aleks-thunder/lint-format-base to 1.0.0 ([9b47774](https://github.com/aleks-thunder/lint-format/commit/9b47774eaf0d16bb2aeeefeed026773f8f90dea8))
+
 # 1.0.0 (2026-04-29)
 
 

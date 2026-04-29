@@ -1,6 +1,6 @@
 {
   "name": "@aleks-thunder/lint-format-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shared React lint and format configuration",
   "type": "module",
   "license": "MIT",
