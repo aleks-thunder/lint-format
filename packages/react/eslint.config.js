@@ -1,5 +1,5 @@
 import { defineConfig } from "eslint/config";
-import baseConfig from "@lavinmedia/lint-format-base/eslint";
+import baseConfig from "@aleks-thunder/lint-format-base/eslint";
 import reactPlugin from "eslint-plugin-react";
 import hooksPlugin from "eslint-plugin-react-hooks";
 

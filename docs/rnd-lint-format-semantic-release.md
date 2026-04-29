@@ -28,7 +28,7 @@ Before publishing real shared presets, we need to validate the end-to-end releas
 
 ### 2) preset module entrypoints vs consumer config file names
 
-- preset module entrypoints (`@lavinmedia/*/eslint`, `@lavinmedia/*/prettier`)
+- preset module entrypoints (`@aleks-thunder/*/eslint`, `@aleks-thunder/*/prettier`)
   - Benefit: the package exposes a stable import target, and it aligns well with `package.json` `exports`.
   - Benefit: consumers can reliably extend the preset by referencing your exported module.
 - `.eslintrc.`\* inside the published package
@@ -42,33 +42,33 @@ Before publishing real shared presets, we need to validate the end-to-end releas
   - Work locally in a monorepo for fast iteration.
   - Do **not** translate well after publishing because `file:../base` points to a path that doesn’t exist in the consumer environment.
 - Real dependency ranges
-  - Ensure that when `@lavinmedia/lint-format-angular` (or `@lavinmedia/lint-format-react`) is installed, `@lavinmedia/lint-format-base` is also installed from the registry.
+  - Ensure that when `@aleks-thunder/lint-format-angular` (or `@aleks-thunder/lint-format-react`) is installed, `@aleks-thunder/lint-format-base` is also installed from the registry.
 
-**Decision for this project:** `@lavinmedia/lint-format-angular` and `@lavinmedia/lint-format-react` depend on `@lavinmedia/lint-format-base` using a portable range.
+**Decision for this project:** `@aleks-thunder/lint-format-angular` and `@aleks-thunder/lint-format-react` depend on `@aleks-thunder/lint-format-base` using a portable range.
 
 ## Final chosen strategy (applies to this repository)
 
 ### Preset packages and exports
 
-- `@lavinmedia/lint-format-base`
+- `@aleks-thunder/lint-format-base`
   - Exposes preset module entrypoints via `packages/base/package.json` `exports`.
-- `@lavinmedia/lint-format-angular` and `@lavinmedia/lint-format-react`
-  - Expose their own preset module entrypoints (and extend `@lavinmedia/lint-format-base` presets).
+- `@aleks-thunder/lint-format-angular` and `@aleks-thunder/lint-format-react`
+  - Expose their own preset module entrypoints (and extend `@aleks-thunder/lint-format-base` presets).
 
 ### Dependency model
 
-- `@lavinmedia/lint-format-base`:
+- `@aleks-thunder/lint-format-base`:
   - uses `dependencies` for `eslint` and `prettier`.
-- `@lavinmedia/lint-format-angular` and `@lavinmedia/lint-format-react`:
-  - depend on `@lavinmedia/lint-format-base` with a portable semver range (demo: `"*"`).
+- `@aleks-thunder/lint-format-angular` and `@aleks-thunder/lint-format-react`:
+  - depend on `@aleks-thunder/lint-format-base` with a portable semver range (demo: `"*"`).
   - do not require the consumer to separately install `eslint/prettier`.
 
 ## Expected consumer usage after implementation
 
 - Install only the preset package:
-  - `npm i -D @lavinmedia/lint-format-angular`
+  - `npm i -D @aleks-thunder/lint-format-angular`
   - (or `.../react` / `.../base`)
 - ESLint config:
-  - `eslint.config.js`: `import` from `@lavinmedia/lint-format-angular/eslint` (see [consumer.md](./consumer.md)).
+  - `eslint.config.js`: `import` from `@aleks-thunder/lint-format-angular/eslint` (see [consumer.md](./consumer.md)).
 - Prettier config:
-  - `prettier.config.js`: `import` from `@lavinmedia/lint-format-angular/prettier` (see [consumer.md](./consumer.md)).
+  - `prettier.config.js`: `import` from `@aleks-thunder/lint-format-angular/prettier` (see [consumer.md](./consumer.md)).

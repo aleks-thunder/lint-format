@@ -1,12 +1,12 @@
 {
-  "name": "@lavinmedia/lint-format-react",
+  "name": "@aleks-thunder/lint-format-react",
   "version": "0.0.0",
   "description": "Shared React lint and format configuration",
   "type": "module",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lavinmedia/lint-format.git"
+    "url": "https://github.com/aleks-thunder/lint-format.git"
   },
   "main": "eslint.config.js",
   "exports": {
@@ -19,8 +19,7 @@
     "prettier.config.js"
   ],
   "dependencies": {
-    "@lavinmedia/lint-format-base": "*",
-    "eslint": "9.39.4",
+    "@aleks-thunder/lint-format-base": "*",
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "5.2.0",
     "prettier-plugin-tailwindcss": "0.6.14"

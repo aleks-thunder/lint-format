@@ -15,7 +15,7 @@
 
 3. In consumer repo, add local packages:
 
-- `yalc add @lavinmedia/lint-format-base @lavinmedia/lint-format-angular`
+- `yalc add @aleks-thunder/lint-format-base @aleks-thunder/lint-format-angular`
 - then `npm install`
 
 4. After each preset change, sync again:
@@ -23,7 +23,7 @@
 - from changed preset package folder (`packages/base`, `packages/angular`, or `packages/react`):
   - `yalc push`
 - in consumer repo:
-  - `yalc update @lavinmedia/lint-format-base @lavinmedia/lint-format-angular`
+  - `yalc update @aleks-thunder/lint-format-base @aleks-thunder/lint-format-angular`
   - `npm install`
 
 5. If lint output in editor does not refresh:
@@ -36,4 +36,4 @@
 
 - Works across machines and teams; no hardcoded relative paths.
 - Close to real package-consumer behavior.
-- Keep CI/release flows on registry versions (`@lavinmedia/*@x.y.z`), not local `yalc` artifacts.
+- Keep CI/release flows on registry versions (`@aleks-thunder/*@x.y.z`), not local `yalc` artifacts.

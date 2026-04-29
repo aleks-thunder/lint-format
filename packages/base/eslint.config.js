@@ -15,8 +15,8 @@ export default defineConfig({
   },
   extends: [
     eslint.configs.recommended,
-    ...tseslint.configs.recommended,
-    ...tseslint.configs.stylistic,
+    tseslint.configs.recommended,
+    tseslint.configs.stylistic,
     eslintConfigPrettier,
   ],
   rules: {
@@ -32,20 +32,26 @@ export default defineConfig({
           "protected-decorated-field",
           "private-decorated-field",
           // Public fields (observables, form controls, etc.)
+          // "public-instance-readonly-field", // check if needed in the future. For now it is caught by the next rule
           "public-instance-field",
-          "public-static-field",
           // Private/protected fields
           "protected-instance-field",
           "private-instance-field",
+          // Static fields
+          "public-static-field",
+          "protected-static-field",
+          "private-static-field",
           // Constructor (AFTER properties)
           "constructor",
           // Lifecycle hooks
           "public-instance-method", // ngOnInit, ngOnChanges, etc.
-          // Public methods
-          "public-static-method",
           // Private/protected methods
           "protected-instance-method",
           "private-instance-method",
+          // Static methods
+          "public-static-method",
+          "protected-static-method",
+          "private-static-method",
         ],
       },
     ],

@@ -71,7 +71,7 @@ BREAKING CHANGE: consumers must update imports from old entry points.
 ### NPM registry targeting
 
 - Root `[.npmrc](../.npmrc)` maps the scope to GitHub Packages:
-  - `@lavinmedia:registry=https://npm.pkg.github.com`
+  - `@aleks-thunder:registry=https://npm.pkg.github.com`
   - `always-auth=true`
 
 ## GitHub Actions workflows (what each does)
@@ -113,6 +113,7 @@ Use Conventional Commits:
 - `fix(scope): ...` -> patch
 - `feat(scope): ...` -> minor
 - `feat(scope)!: ...` -> major
+- `breaking(scope): ...` -> major
 
 ## Short demo checklist
 
@@ -125,13 +126,13 @@ Use Conventional Commits:
 
 ## Rollout checklist for consumer repos
 
-- Add dependency on `@lavinmedia/lint-format-base` / `@lavinmedia/lint-format-angular` / `@lavinmedia/lint-format-react`.
+- Add dependency on `@aleks-thunder/lint-format-base` / `@aleks-thunder/lint-format-angular` / `@aleks-thunder/lint-format-react`.
 - Extend ESLint/Prettier from the selected preset package.
 - Remove duplicated local lint/format rules.
 - Run lint/format locally and validate CI.
 
 ## Troubleshooting
 
-- **No release created**: commit is not releasable (`feat`/`fix`/`feat()!`).
+- **No release created**: commit is not releasable (`feat`/`fix`/`feat()!`/`breaking`).
 - **Wrong package released**: check `Detect changed packages (native git)` step outputs (`base/angular/react=true|false`) in workflow logs.
 - **Auth/publish errors**: confirm token permissions and scope mapping in `.npmrc`.
