@@ -1,6 +1,6 @@
 {
   "name": "@aleks-thunder/lint-format-base",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Shared base ESLint and Prettier configuration",
   "type": "module",
   "license": "MIT",
@@ -38,5 +38,3 @@
     "tagFormat": "base-v${version}"
   }
 }
-
-
