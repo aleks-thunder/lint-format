@@ -3,7 +3,7 @@
 Install package:
 
 ```bash
-npm i -D @aleks-thunder/lint-format-base
+npm i -D @aleks-thunder/lint-format-base asda
 # or: @aleks-thunder/lint-format-angular | @aleks-thunder/lint-format-react
 ```
 
